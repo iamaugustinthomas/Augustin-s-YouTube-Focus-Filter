@@ -22,7 +22,7 @@ This method allows your filter to automatically update if I make improvements to
 2. Go to the **Filter lists** tab.
 3. Scroll to the very bottom and check **Import**.
 4. Paste the raw URL of the filter text file:
-   `https://raw.githubusercontent.com/iamaugustinthomas/Augustin-s-YouTube-Focus-Filter/main/augustins-youtube-focus.txt` *(Make sure to update this link with your actual GitHub repo details!)*
+   `https://raw.githubusercontent.com/iamaugustinthomas/Augustin-s-YouTube-Focus-Filter/refs/heads/main/augustins-youtube-focus.txt` 
 5. Click **Apply changes** at the top left.
 
 ### Option B: Manual Copy/Paste
