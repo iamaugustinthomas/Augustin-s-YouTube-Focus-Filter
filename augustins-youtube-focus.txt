@@ -1,7 +1,7 @@
 ! Title: Augustin's YouTube Focus Filter
 ! Description: A minimalist, distraction-free YouTube experience. Hides the algorithm, homepage feed, shorts, and sidebars.
 ! Author: Augustin
-! Version: 1.1.0
+! Version: 1.2.0
 ! License: MIT
 ! Expires: 14 days
 
@@ -20,10 +20,11 @@ youtube.com##ytd-watch-flexy #related
 youtube.com##.ytp-endscreen-content
 youtube.com##.ytp-ce-element
 
-! 4. Hide Shorts (Shelves and Sidebar Button)
+! 4. Hide Shorts (Shelves, Main Sidebar, and Mini Sidebar)
 youtube.com##ytd-reel-shelf-renderer
 youtube.com##ytd-rich-section-renderer:has(yt-icon[icon="yt-sys-icons:shorts"])
-youtube.com##[tab-identifier="FEshorts"]
+youtube.com##ytd-guide-entry-renderer:has(a[href^="/shorts"])
+youtube.com##ytd-mini-guide-entry-renderer:has(a[href^="/shorts"])
 
 ! 5. Hide "Explore" and "Trending" sidebars 
 youtube.com##ytd-guide-entry-renderer a[href^="/feed/explore"]
@@ -32,5 +33,12 @@ youtube.com##ytd-guide-entry-renderer a[href^="/feed/trending"]
 ! ===================================================================
 ! MOBILE WEB SUPPORT (For Firefox Android + uBlock Origin)
 ! ===================================================================
+
+! Hide Mobile Homepage Feed
 m.youtube.com##ytm-browse ytm-rich-grid-renderer
+
+! Hide Mobile Watch Page Related Items
 m.youtube.com##ytm-item-section-renderer[section-identifier="related-items"]
+
+! Hide Mobile Bottom Nav Shorts Button
+m.youtube.com##ytm-pivot-bar-item-renderer:has(a[href^="/shorts"])
