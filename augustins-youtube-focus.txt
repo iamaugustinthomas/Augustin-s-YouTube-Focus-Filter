@@ -1,0 +1,31 @@
+! Title: Augustin's YouTube Focus Filter
+! Description: A minimalist, distraction-free YouTube experience. Hides the algorithm, homepage feed, shorts, and sidebars.
+! Author: Augustin
+! Version: 1.0.0
+! License: MIT
+! Expires: 14 days
+
+! ===================================================================
+! AUGUSTIN'S YOUTUBE FOCUS FILTER
+! Focus on what you search for, not what the algorithm feeds you.
+! ===================================================================
+
+! 1. Hide the YouTube Home Page Feed
+youtube.com##ytd-browse[page-subtype="home"]
+
+! 2. Hide the Right Sidebar Recommendations on Watch Pages
+youtube.com###related
+youtube.com###secondary
+
+! 3. Hide the Video End-Screen Popups (Suggested Videos at the end)
+youtube.com##.ytp-ce-element
+youtube.com##.ytp-endscreen-content
+
+! 4. Hide YouTube Shorts (Everywhere)
+youtube.com##ytd-rich-shelf-renderer[is-shorts]
+youtube.com##ytd-reel-shelf-renderer
+youtube.com##[tab-identifier="FEshorts"]
+
+! 5. Hide "Explore" and "Trending" sidebars 
+youtube.com##ytd-guide-entry-renderer a[href^="/feed/explore"]
+youtube.com##ytd-guide-entry-renderer a[href^="/feed/trending"]
