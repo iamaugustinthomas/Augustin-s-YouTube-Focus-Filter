@@ -1,7 +1,7 @@
 ! Title: Augustin's YouTube Focus Filter
 ! Description: A minimalist, distraction-free YouTube experience. Hides the algorithm, homepage feed, shorts, and sidebars.
 ! Author: Augustin
-! Version: 1.0.0
+! Version: 1.1.0
 ! License: MIT
 ! Expires: 14 days
 
@@ -10,22 +10,27 @@
 ! Focus on what you search for, not what the algorithm feeds you.
 ! ===================================================================
 
-! 1. Hide the YouTube Home Page Feed
-youtube.com##ytd-browse[page-subtype="home"]
+! 1. Hide the Homepage Feed (Leaves a blank page with just the search bar)
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-grid-renderer
 
-! 2. Hide the Right Sidebar Recommendations on Watch Pages
-youtube.com###related
-youtube.com###secondary
+! 2. Hide Watch Page Sidebar (Related / Up Next videos)
+youtube.com##ytd-watch-flexy #related
 
-! 3. Hide the Video End-Screen Popups (Suggested Videos at the end)
-youtube.com##.ytp-ce-element
+! 3. Hide End Screen Video Suggestions (Pop-ups that appear when a video finishes)
 youtube.com##.ytp-endscreen-content
+youtube.com##.ytp-ce-element
 
-! 4. Hide YouTube Shorts (Everywhere)
-youtube.com##ytd-rich-shelf-renderer[is-shorts]
+! 4. Hide Shorts (Shelves and Sidebar Button)
 youtube.com##ytd-reel-shelf-renderer
+youtube.com##ytd-rich-section-renderer:has(yt-icon[icon="yt-sys-icons:shorts"])
 youtube.com##[tab-identifier="FEshorts"]
 
 ! 5. Hide "Explore" and "Trending" sidebars 
 youtube.com##ytd-guide-entry-renderer a[href^="/feed/explore"]
 youtube.com##ytd-guide-entry-renderer a[href^="/feed/trending"]
+
+! ===================================================================
+! MOBILE WEB SUPPORT (For Firefox Android + uBlock Origin)
+! ===================================================================
+m.youtube.com##ytm-browse ytm-rich-grid-renderer
+m.youtube.com##ytm-item-section-renderer[section-identifier="related-items"]
